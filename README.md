@@ -18,36 +18,36 @@ Debug.WriteLine(await CoinspotAPI.CoinspotAPI.APIQuery(apiKey, apiSecret, "/ro/m
 Debug.WriteLine(await CoinspotAPI.CoinspotAPI.ListOpenOrders(apiKey, apiSecret, "BTC"));
 
 #### List Deposit/Receive Address for specified coins
-Debug.WriteLine(await CoinspotAPI.CoinspotAPI.MyDepositAddress(apiKey, apiSecret, "BTC"));
+`Debug.WriteLine(await CoinspotAPI.CoinspotAPI.MyDepositAddress(apiKey, apiSecret, "BTC"));`
 
 #### Quickbuy/QuickSell **THESE DO NOT SEEM TO WORK AS INTENDED**
-Debug.WriteLine(await CoinspotAPI.CoinspotAPI.QuickBuyQuote(apiKey, apiSecret, "BTC",5));
+`Debug.WriteLine(await CoinspotAPI.CoinspotAPI.QuickBuyQuote(apiKey, apiSecret, "BTC",5));`
 
 #### List Account Balances
-Debug.WriteLine(await CoinspotAPI.CoinspotAPI.ListMyBalances(apiKey, apiSecret));
+`Debug.WriteLine(await CoinspotAPI.CoinspotAPI.ListMyBalances(apiKey, apiSecret));`
 
 #### List Market Orders
-Debug.WriteLine(await CoinspotAPI.CoinspotAPI.ListMyOrders(apiKey, apiSecret));
+`Debug.WriteLine(await CoinspotAPI.CoinspotAPI.ListMyOrders(apiKey, apiSecret));`
 
 #### Place market buy order -- example interpretation following..
-var response = await CoinspotAPI.CoinspotAPI.PlaceBuyOrder(apiKey, apiSecret, "XRP", 5, 2.00000001f);
+`var response = await CoinspotAPI.CoinspotAPI.PlaceBuyOrder(apiKey, apiSecret, "XRP", 5, 2.00000001f);
 Debug.WriteLine(response);
 dynamic data = JObject.Parse(response);
- data.id = id
+ data.id = id`
 
 #### Place Sell order
-Debug.WriteLine(await CoinspotAPI.CoinspotAPI.PlaceSellOrder(apiKey, apiSecret,"XRP", 4.30603262, 2.650000));
+`Debug.WriteLine(await CoinspotAPI.CoinspotAPI.PlaceSellOrder(apiKey, apiSecret,"XRP", 4.30603262, 2.650000));`
 
 #### Cancel Sell order, using data.id from above.
-Debug.WriteLine(await CoinspotAPI.CoinspotAPI.CancelBuyOrder(apiKey, apiSecret, data.id));
+`Debug.WriteLine(await CoinspotAPI.CoinspotAPI.CancelBuyOrder(apiKey, apiSecret, data.id));`
 
 #### List Transaction History (all)
-Debug.WriteLine(await CoinspotAPI.CoinspotAPI.ListTransactionHistory(apiKey, apiSecret));
+`Debug.WriteLine(await CoinspotAPI.CoinspotAPI.ListTransactionHistory(apiKey, apiSecret));`
 
 #### List Transaction History (specific Coin)
-Debug.WriteLine(await CoinspotAPI.CoinspotAPI.ListTransactionHistory(apiKey, apiSecret, "DOGE"));
+`Debug.WriteLine(await CoinspotAPI.CoinspotAPI.ListTransactionHistory(apiKey, apiSecret, "DOGE"));`
   
 #### Below, self explanitory.
-Debug.WriteLine(await CoinspotAPI.CoinspotAPI.ListMyReferralPayments(apiKey, apiSecret));
+`Debug.WriteLine(await CoinspotAPI.CoinspotAPI.ListMyReferralPayments(apiKey, apiSecret));
 Debug.WriteLine(await CoinspotAPI.CoinspotAPI.SendReceiveTransactions(apiKey, apiSecret));
-Debug.WriteLine(await CoinspotAPI.CoinspotAPI.ListMyAffiliatePayments(apiKey, apiSecret));
+Debug.WriteLine(await CoinspotAPI.CoinspotAPI.ListMyAffiliatePayments(apiKey, apiSecret));`
