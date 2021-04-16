@@ -31,9 +31,12 @@ I've been tinkering around with the Coinspot (Australian Crypto Exchange) API la
 
 #### Place market buy order -- example interpretation following..
 `var response = await CoinspotAPI.CoinspotAPI.PlaceBuyOrder(apiKey, apiSecret, "XRP", 5, 2.00000001f);
+
 Debug.WriteLine(response);
+
 dynamic data = JObject.Parse(response);
- data.id = id`
+
+data.id = id`
 
 #### Place Sell order
 `Debug.WriteLine(await CoinspotAPI.CoinspotAPI.PlaceSellOrder(apiKey, apiSecret,"XRP", 4.30603262, 2.650000));`
@@ -49,5 +52,7 @@ dynamic data = JObject.Parse(response);
   
 #### Below, self explanitory.
 `Debug.WriteLine(await CoinspotAPI.CoinspotAPI.ListMyReferralPayments(apiKey, apiSecret));
+
 Debug.WriteLine(await CoinspotAPI.CoinspotAPI.SendReceiveTransactions(apiKey, apiSecret));
+
 Debug.WriteLine(await CoinspotAPI.CoinspotAPI.ListMyAffiliatePayments(apiKey, apiSecret));`
