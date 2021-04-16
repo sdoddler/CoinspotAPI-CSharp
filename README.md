@@ -9,13 +9,13 @@ I've been tinkering around with the Coinspot (Australian Crypto Exchange) API la
 ##### I believe Coinspot truncates any decimal places that exceed their limits.. ie if you put 1.0000001 and they limit to 6 decimal places, you are putting an order for 1.0
 
 #### Custom URL query
-Debug.WriteLine(await CoinspotAPI.CoinspotAPI.APIQuery(apiKey, apiSecret, "/ro/my/balances"));
+`Debug.WriteLine(await CoinspotAPI.CoinspotAPI.APIQuery(apiKey, apiSecret, "/ro/my/balances"));`
 
 #### Custom URL query2
-Debug.WriteLine(await CoinspotAPI.CoinspotAPI.APIQuery(apiKey, apiSecret, "/ro/my/transactions"));
+`Debug.WriteLine(await CoinspotAPI.CoinspotAPI.APIQuery(apiKey, apiSecret, "/ro/my/transactions"));`
 
 #### List open orders - if you don't include a coin type it will get all open orders
-Debug.WriteLine(await CoinspotAPI.CoinspotAPI.ListOpenOrders(apiKey, apiSecret, "BTC"));
+`Debug.WriteLine(await CoinspotAPI.CoinspotAPI.ListOpenOrders(apiKey, apiSecret, "BTC"));`
 
 #### List Deposit/Receive Address for specified coins
 `Debug.WriteLine(await CoinspotAPI.CoinspotAPI.MyDepositAddress(apiKey, apiSecret, "BTC"));`
